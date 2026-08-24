@@ -1,0 +1,67 @@
+name: Defect report
+description: Record a reproducible AEGIS defect using synthetic or sanitized evidence.
+title: "[Bug]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Do not include secrets, exploit payloads, customer information, raw
+        telemetry or patent-sensitive details. Use a private security advisory
+        for a vulnerability.
+  - type: input
+    id: version
+    attributes:
+      label: AEGIS version
+      placeholder: 1.2.0
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Desktop console
+        - Resident node
+        - Investigation and evidence
+        - Learning and governance
+        - Access and audit
+        - Packaging and installer
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behaviour
+      description: State exactly what happened with sensitive values removed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Safe reproduction
+      description: Use only a synthetic or explicitly authorized environment.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Test names, hashes and minimal logs; never paste credentials or raw telemetry.
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I used an authorized environment and removed sensitive data.
+          required: true
+        - label: This report does not contain a security exploit or patent-sensitive disclosure.
+          required: true

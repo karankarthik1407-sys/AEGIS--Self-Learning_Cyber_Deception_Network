@@ -1,0 +1,60 @@
+name: Research experiment
+description: Register a falsifiable AEGIS experiment before running it.
+title: "[Research]: "
+labels: []
+body:
+  - type: input
+    id: question
+    attributes:
+      label: Research question
+      placeholder: RQ-...
+    validations:
+      required: true
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Falsifiable hypothesis and null
+    validations:
+      required: true
+  - type: textarea
+    id: comparators
+    attributes:
+      label: Baselines and comparators
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Dataset, provenance and split contract
+      description: Include grouping, temporal/OOD boundaries and leakage controls.
+    validations:
+      required: true
+  - type: textarea
+    id: protocol
+    attributes:
+      label: Seeds, metrics, uncertainty and ablations
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety, privacy and compute envelope
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: Failure criteria and negative-result handling
+    validations:
+      required: true
+  - type: dropdown
+    id: disclosure
+    attributes:
+      label: Disclosure classification
+      options:
+        - Patent-sensitive
+        - Confidential
+        - Internal
+        - Public (approval record required)
+    validations:
+      required: true

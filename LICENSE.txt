@@ -1,0 +1,10 @@
+AEGIS PROPRIETARY SOURCE NOTICE
+
+Copyright (c) 2026 K. Karan Murugan. All rights reserved.
+
+This repository is an unpublished research and product-development work. No
+license to copy, distribute, deploy, sublicense, reverse engineer, or create
+derivative works is granted by possession of these files. A production license,
+evaluation agreement, contributor agreement, and third-party dependency review
+must be prepared before external distribution or commercial deployment.
+

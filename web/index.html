@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#030506">
+  <meta name="description" content="AEGIS authorized cyber deception control plane">
+  <meta name="aegis-session-token" content="">
+  <title>AEGIS — Autonomous Deception Intelligence</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="splash" id="splash" aria-hidden="true">
+    <div class="splash-grid"></div>
+    <div class="splash-core">
+      <div class="splash-word" data-text="AEGIS">AEGIS</div>
+      <div class="splash-rule"></div>
+      <p>SELF-LEARNING CYBER DECEPTION NETWORK</p>
+    </div>
+    <div class="splash-status"><span></span> INITIALIZING SECURE CONTROL PLANE</div>
+  </div>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand-mini" href="#mission" data-workspace-link="mission" aria-label="AEGIS home">
+        <span class="brand-glyph">A</span>
+        <span class="brand-name">AEGIS<small>DECEPTION INTELLIGENCE</small></span>
+      </a>
+
+      <nav class="side-nav" aria-label="Primary navigation">
+        <button class="nav-item active" data-workspace="mission" title="Mission Canvas">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg><span>Mission Canvas</span>
+        </button>
+        <button class="nav-item" data-workspace="cases" title="Live Cases">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h5l2 2h9v12H4V5Zm2 4v8h12V9H6Z"/></svg><span>Live Cases</span>
+        </button>
+        <button class="nav-item" data-workspace="campaigns" title="Campaign Constellation">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm12 6a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM7 16a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm1-9 7 4-1 1.7-7-4L8 7Zm7.5 7.2 1.7 1-7 4-1-1.7 7-4Z"/></svg><span>Campaigns</span>
+        </button>
+        <button class="nav-item" data-workspace="trace" title="Threat Trace">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v3.1a7 7 0 0 1 5.9 5.9H22v2h-3.1a7 7 0 0 1-5.9 5.9V22h-2v-3.1A7 7 0 0 1 5.1 13H2v-2h3.1A7 7 0 0 1 11 5.1V2Zm1 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/></svg><span>Threat Trace</span>
+        </button>
+        <button class="nav-item" data-workspace="graph" title="Graph Lab">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm14 6a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM6 16a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm1-9 8.5 4.2-.9 1.8L6.1 8.8 7 7Zm8.9 7.1.9 1.8-7.9 3.9-.9-1.8 7.9-3.9Z"/></svg><span>Graph Lab</span>
+        </button>
+        <button class="nav-item" data-workspace="steering" title="Steering Lab">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v3.1a7 7 0 0 1 5.9 5.9H22v2h-3.1a7 7 0 0 1-5.9 5.9V22h-2v-3.1A7 7 0 0 1 5.1 13H2v-2h3.1A7 7 0 0 1 11 5.1V2Zm1 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2 3 3-3 3-3-3 3-3Z"/></svg><span>Steering Lab</span>
+        </button>
+        <button class="nav-item" data-workspace="deception" title="Deception Fabric">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 7l9 5 9-5-9-5ZM5 10v7l7 5 7-5v-7l-7 4-7-4Z"/></svg><span>Deception Fabric</span>
+        </button>
+        <button class="nav-item" data-workspace="evidence" title="Evidence Vault">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7V3Zm2 2v14h8V9h-4V5H9Zm2 8h4v2h-4v-2Z"/></svg><span>Evidence Vault</span>
+        </button>
+        <button class="nav-item" data-workspace="trust" title="Enforcement &amp; Trust">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5.1 3.4 9.8 8 11 4.6-1.2 8-5.9 8-11V5l-8-3Zm0 3 5 1.8V11c0 3.5-2.1 6.8-5 7.9C9.1 17.8 7 14.5 7 11V6.8L12 5Z"/></svg><span>Enforcement &amp; Trust</span>
+        </button>
+        <button class="nav-item" data-workspace="research" title="Research Lab">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6v2h-1v5.6l5.2 8.6A2.5 2.5 0 0 1 17 22H7a2.5 2.5 0 0 1-2.2-3.8L10 9.6V4H9V2Zm3 8.2-5.5 9.1c-.2.3 0 .7.5.7h10c.5 0 .7-.4.5-.7L12 10.2Z"/></svg><span>Research Lab</span>
+        </button>
+        <button class="nav-item" data-workspace="models" title="Learning Fabric">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16v2H4v-2Zm1-3 4-5 3 3 5-8 2 1-6.5 10-3.3-3.3L6.5 17 5 16Zm0-11h2v4H5V5Zm6-2h2v6h-2V3Zm6 0h2v2h-2V3Z"/></svg><span>Learning Fabric</span>
+        </button>
+        <button class="nav-item" data-workspace="governance" title="Governance Ledger">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm0 3 5 1.8V11c0 3.4-2 6.6-5 7.8C9 17.6 7 14.4 7 11V6.8L12 5Zm-2 4h4v2h-4V9Zm0 4h4v2h-4v-2Z"/></svg><span>Governance</span>
+        </button>
+        <button class="nav-item" data-workspace="access" title="Access &amp; Audit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 1 5 5v2h2v13H5V9h2V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v2h6V7a3 3 0 0 0-3-3Zm0 9a2 2 0 0 0-1 3.7V19h2v-2.3A2 2 0 0 0 12 13Z"/></svg><span>Access &amp; Audit</span>
+        </button>
+        <button class="nav-item" data-workspace="telemetry" title="Telemetry Nexus">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h3v14H4V5Zm5 7h3v7H9v-7Zm5-5h3v12h-3V7Zm5-4h2v16h-2V3ZM3 21h19v1H3v-1Z"/></svg><span>Telemetry Nexus</span>
+        </button>
+        <button class="nav-item" data-workspace="gateway" title="Evidence Gateway">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v5H3V4Zm2 2v1h14V6H5Zm-2 9h7v5H3v-5Zm11 0h7v5h-7v-5ZM6 9h2v3h8V9h2v5h-2v-1H8v1H6V9Z"/></svg><span>Evidence Gateway</span>
+        </button>
+        <button class="nav-item" data-workspace="system" title="System &amp; Agents">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16v12H4V3Zm2 2v8h12V5H6Zm3 13h6l1 2H8l1-2Zm-4-7h2v2H5v-2Zm12-4h2v2h-2V7Z"/></svg><span>System &amp; Agents</span>
+        </button>
+      </nav>
+
+      <div class="side-footer">
+        <div class="containment-pulse"><span></span></div>
+        <div><strong id="sideNodeState">NODE CONNECTING</strong><small id="sideNodeDetail">LOCAL RUNTIME</small></div>
+      </div>
+    </aside>
+
+    <main class="main-frame">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="workspaceEyebrow">AEGIS / DECEPTION CONTROL PLANE</p>
+          <h1 id="workspaceTitle">Mission Canvas</h1>
+        </div>
+        <div class="top-actions">
+          <div class="environment-chip"><span></span><b id="environmentChipText">Local node · Desktop Edition</b></div>
+          <button class="icon-button" id="resetButton" title="Reset synthetic demonstration" aria-label="Reset synthetic demonstration">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5a7 7 0 1 1-6.2 3.8l1.8.9A5 5 0 1 0 12 7v3l4-4-4-4v3Z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="workspace active" id="workspace-mission" data-title="Mission Canvas" data-eyebrow="AEGIS / DECEPTION CONTROL PLANE">
+        <section class="mission-banner">
+          <div>
+            <div class="mode-label"><span></span> SYSTEM STATE</div>
+            <h2 id="systemState">Contained intelligence loop</h2>
+            <p>Observe, infer, steer and preserve—without crossing the authorization boundary.</p>
+            <div class="runtime-line"><span id="missionNodeState">LOCAL NODE CONNECTING</span><i></i><span>GOVERNED LEARNING</span><i></i><span>DECOY-ONLY ACTUATION</span></div>
+          </div>
+          <button class="primary-button" id="simulateButton"><span>Run next safe simulation</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7V5Z"/></svg></button>
+        </section>
+
+        <section class="metrics" aria-label="System metrics">
+          <article class="metric-card"><div class="metric-top"><span>ACTIVE CASES</span><i class="cyan"></i></div><strong id="activeCases">—</strong><small>Authorized sessions under analysis</small></article>
+          <article class="metric-card"><div class="metric-top"><span>DECOY COVERAGE</span><i class="gold"></i></div><strong><span id="decoyAssets">—</span><em> nodes</em></strong><small>Protected core remains unreachable</small></article>
+          <article class="metric-card"><div class="metric-top"><span>CAMPAIGN LINKS</span><i class="violet"></i></div><strong id="campaignLinks">—</strong><small>Probabilistic activity relationships</small></article>
+          <article class="metric-card"><div class="metric-top"><span>MODEL CONFIDENCE</span><i class="cyan"></i></div><strong><span id="modelConfidence">—</span><em>%</em></strong><small>Uncertainty is retained, never hidden</small></article>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="panel topology-panel">
+            <div class="panel-header"><div><span class="panel-kicker">LIVE WORLD STATE</span><h3>Protected topology</h3></div><div class="legend"><span class="decoy-dot"></span>Decoy <span class="protected-dot"></span>Protected</div></div>
+            <div class="topology" id="topology" aria-label="Protected topology graph"><svg id="topologyEdges" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg><div id="topologyNodes"></div><div class="topology-scan"></div></div>
+            <div class="topology-foot"><span><i></i> No route from deception namespace to protected core</span><strong>ISOLATION VERIFIED</strong></div>
+          </article>
+
+          <article class="panel belief-panel">
+            <div class="panel-header"><div><span class="panel-kicker">BELIEF ENGINE</span><h3>Intent hypotheses</h3></div><span class="confidence-badge" id="caseConfidence">— confidence</span></div>
+            <div class="belief-summary"><small>LEADING EXPLANATION</small><strong id="topHypothesis">Awaiting telemetry</strong><p id="caseSummary">The model preserves competing explanations until the evidence separates them.</p></div>
+            <div class="belief-bars" id="beliefBars"></div>
+            <p class="method-note">Probabilities are normalized beliefs—not identity attribution.</p>
+          </article>
+
+          <article class="panel case-panel">
+            <div class="panel-header"><div><span class="panel-kicker">ACTIVE NARRATIVE</span><h3 id="caseId">Case —</h3></div><span class="risk-badge" id="riskBadge">RISK —</span></div>
+            <div class="case-meta"><span id="caseSource">Authorized range</span><span id="caseStage">Stage —</span></div>
+            <div class="timeline" id="timeline"></div>
+          </article>
+
+          <article class="panel safety-panel">
+            <div class="panel-header"><div><span class="panel-kicker gold-text">DETERMINISTIC CONTROL</span><h3>Safety Gate</h3></div><span class="gate-state" id="gateState"><i></i> READY</span></div>
+            <p class="safety-copy">Adaptive models may propose. Only machine-verified actions may execute.</p>
+            <div class="certificate" id="certificate"><div class="cert-empty"><span class="cert-icon">◇</span><strong>No action pending</strong><small>Evaluate the diagnostic probe to issue a certificate.</small></div></div>
+            <button class="secondary-button" id="evaluateButton">Evaluate diagnostic probe</button>
+          </article>
+
+          <article class="panel evidence-panel">
+            <div class="panel-header"><div><span class="panel-kicker">PROVENANCE</span><h3>Evidence integrity</h3></div><span class="ledger-state" id="ledgerState">NOT CHECKED</span></div>
+            <div class="hash-display"><small>CHAIN HEAD</small><code id="chainHead">Run verification to calculate</code></div>
+            <div class="evidence-stats"><div><strong id="verifiedCases">—</strong><span>cases</span></div><div><strong id="verifiedEvents">—</strong><span>events</span></div><div><strong>SHA-256</strong><span>digest</span></div></div>
+            <button class="secondary-button" id="verifyButton">Verify complete evidence chain</button>
+          </article>
+        </section>
+      </section>
+
+      <section class="workspace" id="workspace-cases" data-title="Live Cases" data-eyebrow="AEGIS / INVESTIGATION WORKSPACE">
+        <div class="workspace-intro"><div><span class="panel-kicker">AUTHORIZED INTRUSION NARRATIVES</span><h2>Follow every decision, not just every alert.</h2><p>Cases retain competing intent explanations, ATT&amp;CK mappings and provenance from first contact to evidence export.</p></div><button class="outline-button" id="caseSimulateButton">Advance selected case</button></div>
+        <div class="cases-layout">
+          <article class="panel case-index-panel"><div class="panel-header"><div><span class="panel-kicker">CASE QUEUE</span><h3>Active investigations</h3></div><span class="count-badge" id="caseCount">—</span></div><div class="case-list" id="caseList"></div></article>
+          <article class="panel case-detail-panel">
+            <div class="panel-header"><div><span class="panel-kicker">CASE NARRATIVE</span><h3 id="detailCaseId">Select a case</h3></div><span class="risk-badge" id="detailRisk">RISK —</span></div>
+            <div class="case-detail-hero"><div><small>LEADING HYPOTHESIS</small><strong id="detailHypothesis">—</strong></div><div><small>CONFIDENCE</small><strong id="detailConfidence">—</strong></div><div><small>EVIDENCE</small><strong id="detailEvidence">—</strong></div></div>
+            <p class="case-detail-summary" id="detailSummary">Choose a case to reconstruct the activity.</p>
+            <div class="detail-columns"><div><span class="section-label">INTENT DISTRIBUTION</span><div class="belief-bars" id="detailBeliefBars"></div></div><div><span class="section-label">EVENT CHAIN</span><div class="timeline extended" id="detailTimeline"></div></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace" id="workspace-campaigns" data-title="Campaign Constellation" data-eyebrow="AEGIS / UNCERTAINTY-AWARE LINKAGE">
+        <div class="workspace-intro campaign-intro"><div><span class="panel-kicker">BEHAVIOURAL INTELLIGENCE</span><h2>Connect incidents without inventing identities.</h2><p>AEGIS correlates technique sequences, target choices and pseudonymous fingerprints while retaining competing explanations.</p></div><span class="boundary-chip">CAMPAIGN LINKAGE ≠ PERSON ATTRIBUTION</span></div>
+        <div class="campaign-layout">
+          <article class="panel constellation-panel"><div class="panel-header"><div><span class="panel-kicker">RELATIONSHIP MAP</span><h3>Campaign constellation</h3></div><span class="live-badge"><i></i> LIVE MODEL</span></div><div class="constellation" id="constellation"><svg id="campaignEdges" viewBox="0 0 100 100" preserveAspectRatio="none"></svg><div id="campaignNodes"></div><div class="orbital-ring ring-one"></div><div class="orbital-ring ring-two"></div></div></article>
+          <article class="panel campaign-detail"><div class="panel-header"><div><span class="panel-kicker">STRONGEST CLUSTER</span><h3 id="campaignName">Awaiting cases</h3></div><span class="link-strength" id="campaignStrength">—</span></div><div class="campaign-score"><span id="campaignScore">—</span><small>LINK CONFIDENCE</small></div><p id="campaignNarrative">No relationship has been evaluated.</p><div class="support-list" id="campaignSupport"></div><div class="attribution-warning" id="attributionStatus">UNVERIFIED — CAMPAIGN LINKAGE ONLY</div></article>
+        </div>
+        <div class="intelligence-grid"><article class="panel"><div class="panel-header"><div><span class="panel-kicker">TECHNIQUE MATRIX</span><h3>Observed behaviours</h3></div></div><div class="data-table"><div class="data-row data-head"><span>Technique</span><span>Tactic</span><span>Cases</span><span>Count</span></div><div id="techniqueRows"></div></div></article><article class="panel"><div class="panel-header"><div><span class="panel-kicker">LINKAGE FEATURES</span><h3>Behavioural indicators</h3></div></div><div class="indicator-list" id="behavioralIndicators"></div><p class="method-note">Signals may be spoofed, shared or copied. Provenance travels with every score.</p></article></div>
+      </section>
+
+      <section class="workspace" id="workspace-trace" data-title="Threat Trace" data-eyebrow="AEGIS / EVIDENCE-DIVERSE ACTIVITY LINKAGE">
+        <div class="workspace-intro trace-intro">
+          <div><span class="panel-kicker">FOLLOW THE ACTIVITY · PRESERVE THE DOUBT</span><h2>Trace the campaign beyond a rotating address.</h2><p>AEGIS fuses pseudonymous infrastructure, transport, tooling, behaviour and deception responses. It links authorized observations to an activity cluster—not to a human identity.</p></div>
+          <div class="stacked-actions"><button class="outline-button" id="traceExperimentButton">Reproduce trace experiment</button><button class="outline-button quiet" id="traceExportButton">Export manifested trace</button></div>
+        </div>
+
+        <section class="metrics trace-metrics" aria-label="Threat trace metrics">
+          <article class="metric-card trace-metric"><div class="metric-top"><span>ACTIVITY LINK</span><i class="cyan"></i></div><strong><span id="traceConfidence">—</span><em>%</em></strong><small id="traceStrength">Awaiting evidence</small></article>
+          <article class="metric-card trace-metric"><div class="metric-top"><span>SIGNAL DIVERSITY</span><i class="violet"></i></div><strong><span id="traceDiversity">—</span><em> / 6</em></strong><small>Independent evidence families</small></article>
+          <article class="metric-card trace-metric"><div class="metric-top"><span>SOURCE CONTEXT</span><i class="gold"></i></div><strong class="text-metric" id="traceSourceState">—</strong><small>Context only, never identity</small></article>
+          <article class="metric-card trace-metric"><div class="metric-top"><span>HUMAN IDENTITY</span><i class="gold"></i></div><strong class="text-metric refused" id="traceIdentity">NOT INFERRED</strong><small>Hard analytical boundary</small></article>
+        </section>
+
+        <div class="trace-command-grid">
+          <article class="panel trace-map-panel">
+            <div class="panel-header"><div><span class="panel-kicker">RELATIONSHIP GEOMETRY</span><h3>Evidence constellation</h3></div><span class="live-badge"><i></i> ACTIVITY ONLY</span></div>
+            <div class="trace-map" id="traceMap"><svg id="traceEdges" viewBox="0 0 100 100" preserveAspectRatio="none"></svg><div id="traceNodes"></div><div class="trace-scan-ring"></div></div>
+            <div class="trace-source-route" id="traceSourceRoute"></div>
+          </article>
+          <article class="panel trace-assessment-panel">
+            <div class="panel-header"><div><span class="panel-kicker gold-text">LEADING ASSESSMENT</span><h3 id="traceAssessment">Awaiting trace</h3></div><span class="link-strength" id="traceAssessmentStrength">—</span></div>
+            <div class="trace-score"><strong id="traceScore">—</strong><span>CALIBRATED LINK CONFIDENCE</span></div>
+            <div class="trace-id"><small>MANIFESTED TRACE</small><code id="traceId">—</code></div>
+            <p class="trace-boundary-copy" id="traceBoundary">AEGIS links observations, not people.</p>
+            <div class="trace-alternatives" id="traceAlternatives"></div>
+          </article>
+        </div>
+
+        <div class="trace-evidence-grid">
+          <article class="panel trace-signal-panel"><div class="panel-header"><div><span class="panel-kicker">EVIDENCE DIVERSITY GATE</span><h3>Signal-family contribution</h3></div><span class="boundary-chip">NO SINGLE-SIGNAL LOCK</span></div><div class="trace-signal-list" id="traceSignalRows"></div></article>
+          <article class="panel trace-timeline-panel"><div class="panel-header"><div><span class="panel-kicker">CROSS-SESSION SEQUENCE</span><h3>Linked observation timeline</h3></div><span class="count-badge" id="traceTimelineCount">—</span></div><div class="trace-timeline" id="traceTimelineRows"></div></article>
+        </div>
+
+        <article class="panel trace-experiment-panel">
+          <div class="panel-header"><div><span class="panel-kicker">FALSIFIABLE COMPARISON</span><h3>Why source-address locking is not enough</h3></div><span class="world-version" id="traceRunId">RUN —</span></div>
+          <div class="trace-experiment-meta"><span id="traceDatasetSummary">Loading grouped pair corpus…</span><strong id="traceExperimentStatus">—</strong></div>
+          <div class="trace-model-comparison" id="traceModelComparison"></div>
+          <p class="method-note">Results are deterministic on a synthetic grouped corpus. The learned candidate stays in shadow until authorized, multi-environment temporal validation is complete.</p>
+        </article>
+        <div class="research-principle trace-warning"><span>TRACE BOUNDARY</span><strong>No raw IP storage, outbound pursuit, external scanning, hack-back, geolocation claim, person identification or state attribution. Lawful identity resolution requires independently verified evidence and authorized investigators.</strong></div>
+      </section>
+
+      <section class="workspace" id="workspace-graph" data-title="Graph Lab" data-eyebrow="AEGIS / TRANSITIVITY-SAFE CAMPAIGN GRAPH">
+        <div class="workspace-intro graph-intro">
+          <div><span class="panel-kicker">COHORT SUPPORT · BRIDGE REJECTION · EXPLICIT ABSTENTION</span><h2>A plausible edge does not get to rewrite the whole graph.</h2><p>Graph Lab stress-tests campaign clustering against a dangerous failure mode: one misleading relationship creating a chain of unsupported merges. AEGIS requires evidence diversity and cohort-level agreement before clusters can combine.</p></div>
+          <button class="outline-button" id="graphExperimentButton">Run bridge stress protocol</button>
+        </div>
+
+        <section class="metrics graph-metrics" aria-label="Graph research metrics">
+          <article class="metric-card"><div class="metric-top"><span>STRESS B³-F1</span><i class="cyan"></i></div><strong><span id="graphBCubed">—</span><em>%</em></strong><small>Entity-independent cluster quality</small></article>
+          <article class="metric-card"><div class="metric-top"><span>FALSE MERGES</span><i class="gold"></i></div><strong><span id="graphFalseMerge">—</span><em>%</em></strong><small>Incorrect same-cluster pairs</small></article>
+          <article class="metric-card"><div class="metric-top"><span>BRIDGES REJECTED</span><i class="violet"></i></div><strong id="graphRejected">—</strong><small>Audited adversarial edges</small></article>
+          <article class="metric-card"><div class="metric-top"><span>HELD-OUT NODES</span><i class="cyan"></i></div><strong id="graphTestNodes">—</strong><small>Family-isolated test graph</small></article>
+        </section>
+
+        <div class="graph-command-grid">
+          <article class="panel graph-stress-panel">
+            <div class="panel-header"><div><span class="panel-kicker">ADVERSARIAL TOPOLOGY</span><h3>Bridge-chain rejection audit</h3></div><span class="live-badge"><i></i> <b id="graphStatus">LOADING</b></span></div>
+            <div class="bridge-visual" aria-label="Two campaign cohorts separated by a rejected bridge"><div class="bridge-cohort"><i></i><i></i><i></i><strong>COHORT A</strong></div><div class="bridge-link"><span>×</span><small>REJECT TRANSITIVE BRIDGE</small></div><div class="bridge-cohort"><i></i><i></i><i></i><strong>COHORT B</strong></div></div>
+            <div class="graph-audit-list" id="graphBridgeDecisions"></div>
+          </article>
+          <article class="panel graph-guard-panel">
+            <div class="panel-header"><div><span class="panel-kicker gold-text">INTERPRETABLE SAFETY LAYER</span><h3>Merge contract</h3></div><span class="boundary-chip">SHADOW ONLY</span></div>
+            <div class="graph-guard-orbit"><div><strong id="graphAssociationThreshold">—</strong><small>ASSOCIATION</small></div><span>+</span><div><strong id="graphSeedThreshold">—</strong><small>SEED</small></div><span>+</span><div><strong id="graphCrossSupport">—</strong><small>CROSS SUPPORT</small></div></div>
+            <div class="privacy-contract graph-contract"><div><span>EVIDENCE FAMILIES</span><strong>≥ 3</strong></div><div><span>CLUSTER SIZE CAP</span><strong id="graphSizeCap">—</strong></div><div><span>AUTOMATIC ATTRIBUTION</span><strong>DISABLED</strong></div><div><span>HUMAN IDENTITY LABEL</span><strong>ABSENT</strong></div></div>
+            <div class="graph-manifest"><small>REPRODUCIBLE RUN</small><code id="graphRunId">—</code><span id="graphDatasetDigest">—</span></div>
+          </article>
+        </div>
+
+        <article class="panel graph-method-panel"><div class="panel-header"><div><span class="panel-kicker">CONTROLLED COMPARISON</span><h3>What happens when the bridge chain arrives</h3></div><span class="count-badge">3 METHODS</span></div><div class="graph-method-table"><div class="graph-method-row graph-method-head"><span>Method</span><span>B³-F1</span><span>False merge</span><span>Split campaigns</span><span>Largest cluster</span></div><div id="graphMethodRows"></div></div></article>
+        <article class="panel graph-cluster-panel"><div class="panel-header"><div><span class="panel-kicker">ABSTENTION-PRESERVING OUTPUT</span><h3>Guarded held-out clusters</h3></div><span class="world-version" id="graphClusterCount">— CLUSTERS</span></div><div class="graph-cluster-cards" id="graphClusterCards"></div><p class="method-note">Small unresolved clusters are retained instead of being forced into a campaign. In this synthetic stress result, that conservative choice prevents every false merge but leaves deliberately noisy sessions split.</p></article>
+        <div class="research-principle graph-boundary"><span>GRAPH BOUNDARY</span><strong>Nodes are authorized-range activity sessions. Clusters are campaign hypotheses—not people, organizations, locations or states. No raw IP, external target, hack-back or automatic attribution enters this experiment.</strong></div>
+      </section>
+
+      <section class="workspace" id="workspace-steering" data-title="Steering Lab" data-eyebrow="AEGIS / ACTIVE DIAGNOSTIC DECEPTION">
+        <div class="workspace-intro steering-intro">
+          <div><span class="panel-kicker">EXPECTED INFORMATION GAIN · SAFE COUNTERFACTUALS · EXPLICIT ABSTENTION</span><h2>Make every decoy interaction answer the most useful next question.</h2><p>AEGIS treats deception as a bounded diagnostic experiment. It selects the isolated synthetic probe expected to reduce intent uncertainty, submits that proposal to the deterministic Safety Kernel, and updates beliefs only after a permitted observation arrives.</p></div>
+          <button class="outline-button" id="steeringExperimentButton">Reproduce steering protocol</button>
+        </div>
+
+        <section class="metrics steering-metrics" aria-label="Diagnostic steering metrics">
+          <article class="metric-card"><div class="metric-top"><span>CORRECT HIGH CONFIDENCE</span><i class="cyan"></i></div><strong><span id="steeringSuccess">—</span><em>%</em></strong><small>Held-out family · posterior ≥ 0.86</small></article>
+          <article class="metric-card"><div class="metric-top"><span>INTERACTIONS SAVED</span><i class="violet"></i></div><strong id="steeringSaved">—</strong><small>Against the static decoy policy</small></article>
+          <article class="metric-card"><div class="metric-top"><span>ENTROPY ADVANTAGE</span><i class="cyan"></i></div><strong><span id="steeringEntropy">—</span><em> bit</em></strong><small>Lower final uncertainty than static</small></article>
+          <article class="metric-card"><div class="metric-top"><span>UNSAFE ACCEPTANCES</span><i class="gold"></i></div><strong id="steeringUnsafe">—</strong><small>Must remain exactly zero</small></article>
+        </section>
+
+        <div class="steering-command-grid">
+          <article class="panel steering-policy-panel">
+            <div class="panel-header"><div><span class="panel-kicker">FOUR-POLICY CONTROLLED COMPARISON</span><h3>Held-out diagnostic efficiency</h3></div><span class="live-badge"><i></i> <b id="steeringStatus">LOADING</b></span></div>
+            <div class="steering-policy-table"><div class="steering-policy-row steering-policy-head"><span>Policy</span><span>Correct ≥ .86</span><span>Wrong ≥ .86</span><span>Interactions</span><span>Entropy</span><span>Brier</span></div><div id="steeringPolicyRows"></div></div>
+          </article>
+          <article class="panel steering-lens-panel">
+            <div class="panel-header"><div><span class="panel-kicker gold-text">DECISION APERTURE</span><h3>Bounded active-learning contract</h3></div><span class="boundary-chip">SHADOW ONLY</span></div>
+            <div class="steering-lens" aria-label="Safety-gated information gain decision loop"><div class="steering-ring outer"></div><div class="steering-ring middle"></div><div class="steering-core"><small>MAXIMIZE</small><strong>ΔH</strong><span>EXPECTED</span></div><i class="steering-sweep"></i></div>
+            <div class="privacy-contract steering-contract"><div><span>CONFIDENCE GATE</span><strong id="steeringThreshold">—</strong></div><div><span>HELD-OUT FAMILY</span><strong id="steeringFamily">—</strong></div><div><span>SAFETY PERMITS</span><strong id="steeringSafetyPermits">—</strong></div><div><span>AUTOMATIC ACTUATION</span><strong>DISABLED</strong></div></div>
+            <div class="graph-manifest"><small>REPRODUCIBLE RUN</small><code id="steeringRunId">—</code><span id="steeringDatasetDigest">—</span></div>
+          </article>
+        </div>
+
+        <article class="panel steering-episode-panel">
+          <div class="panel-header"><div><span class="panel-kicker">AUDITABLE BAYESIAN ROUTE</span><h3>One held-out diagnostic episode</h3></div><span class="world-version" id="steeringEpisodeResult">AWAITING RUN</span></div>
+          <div class="steering-episode-meta"><div><small>HIDDEN SYNTHETIC INTENT</small><strong id="steeringEpisodeIntent">—</strong></div><div><small>OBSERVATION MODEL</small><strong>FAMILY-SHIFTED</strong></div><div><small>SAFETY ORDER</small><strong>VERIFY → OBSERVE → UPDATE</strong></div></div>
+          <div class="steering-route" id="steeringEpisodeSteps"></div>
+          <p class="method-note">This trace is explanatory, not proof of operational accuracy. The hidden label, likelihood table and environment shift are synthetic and declared in the run manifest.</p>
+        </article>
+
+        <article class="panel steering-probe-panel"><div class="panel-header"><div><span class="panel-kicker">EQUAL ACTION CONTRACT</span><h3>Candidate diagnostic probes</h3></div><span class="count-badge">4 DECOY-ONLY ACTIONS</span></div><div class="steering-probes" id="steeringProbeCards"></div></article>
+        <div class="research-principle steering-boundary"><span>STEERING BOUNDARY</span><strong>AEGIS chooses only among pre-authorized synthetic decoy probes. It cannot target an external address, pursue an intruder, infer a person, touch protected data, bypass the Safety Kernel or promote itself from this experiment.</strong></div>
+      </section>
+
+      <section class="workspace" id="workspace-deception" data-title="Deception Fabric" data-eyebrow="AEGIS / CONTROLLED COUNTERFACTUAL WORLD">
+        <div class="workspace-intro"><div><span class="panel-kicker">DECOY ORCHESTRATION</span><h2>A believable world with a hard edge.</h2><p>Every asset is synthetic, stateful and isolated. The protected namespace remains unreachable from the deception fabric.</p></div><span class="world-version" id="worldVersion">WORLD —</span></div>
+        <section class="metrics compact-metrics"><article class="metric-card"><div class="metric-top"><span>ASSETS</span><i class="cyan"></i></div><strong id="fabricAssetCount">—</strong><small>Controlled deception nodes</small></article><article class="metric-card"><div class="metric-top"><span>ENGAGED</span><i class="gold"></i></div><strong id="engagedAssetCount">—</strong><small>Currently interacting</small></article><article class="metric-card"><div class="metric-top"><span>ISOLATION</span><i class="cyan"></i></div><strong class="text-metric">VERIFIED</strong><small>No protected route</small></article></section>
+        <article class="panel"><div class="panel-header"><div><span class="panel-kicker">ASSET REGISTRY</span><h3>Deception nodes</h3></div><span class="live-badge"><i></i> SYNTHETIC ONLY</span></div><div class="data-table asset-table"><div class="data-row data-head"><span>Asset</span><span>Type</span><span>Surface</span><span>State</span><span>Sessions</span><span>Isolation</span></div><div id="assetRows"></div></div></article>
+        <div class="world-flow"><div><span>01</span><strong>Observe</strong><small>Normalize authorized telemetry</small></div><i></i><div><span>02</span><strong>Infer</strong><small>Update competing hypotheses</small></div><i></i><div><span>03</span><strong>Steer</strong><small>Select a diagnostic probe</small></div><i></i><div><span>04</span><strong>Verify</strong><small>Prove constraints before release</small></div></div>
+      </section>
+
+      <section class="workspace" id="workspace-evidence" data-title="Evidence Vault" data-eyebrow="AEGIS / FORENSIC PROVENANCE">
+        <div class="workspace-intro"><div><span class="panel-kicker">INVESTIGATOR-READY RECORD</span><h2>Evidence that explains where it came from.</h2><p>Each event is hash-linked, ATT&amp;CK-mapped and exportable with its uncertainty and authorization boundary intact.</p></div><button class="outline-button" id="exportCaseButton">Export selected case bundle</button></div>
+        <div class="vault-grid"><article class="panel vault-integrity"><div class="panel-header"><div><span class="panel-kicker">CHAIN VERIFICATION</span><h3>Ledger integrity</h3></div><span class="ledger-state" id="vaultLedgerState">NOT CHECKED</span></div><div class="vault-seal"><div class="seal-rings"><span>SHA</span></div><div><small>ACTIVE CASE</small><strong id="vaultCaseId">—</strong><code id="vaultChainHead">Awaiting verification</code></div></div><button class="secondary-button" id="vaultVerifyButton">Verify all evidence chains</button></article><article class="panel"><div class="panel-header"><div><span class="panel-kicker">EXPORT BOUNDARY</span><h3>What travels with a case</h3></div></div><ul class="boundary-list"><li>Canonical events and timestamps</li><li>Previous and current event hashes</li><li>Model distribution and uncertainty</li><li>ATT&amp;CK technique mapping</li><li>Scope and authorization statement</li><li>Explicit non-attribution warning</li></ul></article></div>
+        <article class="panel evidence-ledger-panel"><div class="panel-header"><div><span class="panel-kicker">EVENT LEDGER</span><h3>Selected case provenance</h3></div><span class="count-badge" id="ledgerEventCount">—</span></div><div class="data-table ledger-table"><div class="data-row data-head"><span>Seq</span><span>Time</span><span>Observation</span><span>Target</span><span>Digest</span></div><div id="evidenceRows"></div></div></article>
+      </section>
+
+      <section class="workspace" id="workspace-trust" data-title="Enforcement &amp; Trust" data-eyebrow="AEGIS / DETERMINISTIC SAFETY KERNEL">
+        <div class="workspace-intro trust-intro"><div><span class="panel-kicker">PROOF BEFORE ACTION</span><h2>Intelligence proposes. The Safety Kernel decides.</h2><p>Every deception action is dry-run against hard invariants, certified, time-bounded and auditable before any deployment adapter may receive it.</p></div><span class="boundary-chip safe">ZERO TRUST FOR GENERATED ACTIONS</span></div>
+        <div class="policy-layout"><article class="panel"><div class="panel-header"><div><span class="panel-kicker">INVARIANT SET</span><h3>Mandatory controls</h3></div><span class="count-badge">8 RULES</span></div><div class="rule-grid"><div><i></i><span>Authorized namespace</span></div><div><i></i><span>Decoy-only target</span></div><div><i></i><span>No network egress</span></div><div><i></i><span>Synthetic data only</span></div><div><i></i><span>Reversible action</span></div><div><i></i><span>Memory ceiling</span></div><div><i></i><span>CPU ceiling</span></div><div><i></i><span>Lifetime ceiling</span></div></div><div class="dual-actions"><button class="secondary-button" id="safeEvaluateButton">Test compliant proposal</button><button class="danger-button" id="unsafeEvaluateButton">Test blocked proposal</button></div></article><article class="panel"><div class="panel-header"><div><span class="panel-kicker">LATEST CERTIFICATE</span><h3>Verification result</h3></div><span class="gate-state" id="policyGateState"><i></i> READY</span></div><div class="certificate large" id="policyCertificate"><div class="cert-empty"><span class="cert-icon">◇</span><strong>No proposal evaluated</strong><small>Run either test to inspect the complete rule result.</small></div></div></article></div>
+      </section>
+
+      <section class="workspace" id="workspace-research" data-title="Research Lab" data-eyebrow="AEGIS / REPRODUCIBLE EXPERIMENTS">
+        <div class="workspace-intro"><div><span class="panel-kicker">FROM PRODUCT CLAIM TO FALSIFIABLE RESULT</span><h2>Every impressive feature needs a baseline.</h2><p>The research workspace records experiments, metrics, seeds, negative results and the evidence needed for publication.</p></div><span class="world-version" id="researchRelease">RELEASE —</span></div>
+        <section class="metrics compact-metrics"><article class="metric-card"><div class="metric-top"><span>SCENARIOS</span><i class="cyan"></i></div><strong id="scenarioCount">—</strong><small>Seeded authorized environments</small></article><article class="metric-card"><div class="metric-top"><span>AUTOMATED TESTS</span><i class="cyan"></i></div><strong id="automatedTests">—</strong><small>Foundation quality gates</small></article><article class="metric-card"><div class="metric-top"><span>EXTERNAL TARGETS</span><i class="gold"></i></div><strong id="externalTargets">—</strong><small>Must remain zero</small></article></section>
+        <article class="panel"><div class="panel-header"><div><span class="panel-kicker">EXPERIMENT BOARD</span><h3>Baselines and ablations</h3></div><span class="live-badge"><i></i> REPRODUCIBLE</span></div><div class="experiment-board" id="experimentRows"></div></article>
+        <div class="research-principle"><span>RESEARCH RULE</span><strong>No model is accepted because it looks intelligent. It must outperform a serious baseline, remain calibrated and survive the safety suite.</strong></div>
+      </section>
+
+      <section class="workspace" id="workspace-models" data-title="Learning Fabric" data-eyebrow="AEGIS / MULTI-MODEL INTELLIGENCE">
+        <div class="workspace-intro observatory-intro">
+          <div><span class="panel-kicker">MEASURE EVERY MODEL · GOVERN EVERY UPDATE</span><h2>A learning system you can challenge.</h2><p>Complementary models share one leakage-resistant evaluation contract. Candidate weights stay in shadow until quality, safety, volume and human-release gates all pass.</p></div>
+          <div class="stacked-actions"><button class="outline-button" id="evaluateLearningButton">Run promotion gate</button><button class="quiet-button" id="runExperimentButton">Re-run baseline</button></div>
+        </div>
+
+        <div class="learning-command-grid">
+          <article class="panel model-fabric-panel"><div class="panel-header"><div><span class="panel-kicker">ACTIVE INTELLIGENCE PLANE</span><h3>Model fabric</h3></div><span class="count-badge" id="fabricModelCount">— MODELS</span></div><div class="model-fabric" id="modelFabric"></div></article>
+          <article class="panel promotion-panel"><div class="panel-header"><div><span class="panel-kicker gold-text">CONTINUAL-LEARNING CONTROL</span><h3>Promotion gate</h3></div><span class="promotion-state" id="promotionState">LOADING</span></div><div class="promotion-route" id="promotionRoute"></div><div class="promotion-checks" id="promotionChecks"></div><p class="method-note" id="learningBoundary">Candidates cannot replace the champion automatically.</p></article>
+        </div>
+
+        <section class="metrics model-metrics" aria-label="Model experiment metrics">
+          <article class="metric-card model-metric"><div class="metric-top"><span>TEST ACCURACY</span><i class="cyan"></i></div><strong><span id="modelAccuracy">—</span><em>%</em></strong><small>Held-out scenario family</small></article>
+          <article class="metric-card model-metric"><div class="metric-top"><span>MACRO F1</span><i class="cyan"></i></div><strong><span id="modelMacroF1">—</span><em>%</em></strong><small>Equal weight across intents</small></article>
+          <article class="metric-card model-metric"><div class="metric-top"><span>BRIER SCORE</span><i class="gold"></i></div><strong id="modelBrier">—</strong><small>Lower probability error is better</small></article>
+          <article class="metric-card model-metric"><div class="metric-top"><span>CALIBRATION GAP</span><i class="violet"></i></div><strong id="modelECE">—</strong><small>Expected calibration error</small></article>
+        </section>
+
+        <div class="observatory-grid">
+          <article class="panel matrix-panel">
+            <div class="panel-header"><div><span class="panel-kicker">ERROR TOPOLOGY</span><h3>Confusion matrix</h3></div><span class="count-badge" id="datasetSummary">DATASET —</span></div>
+            <div class="confusion-matrix" id="confusionMatrix" aria-label="Intent confusion matrix"></div>
+            <p class="method-note">Rows are true intent hypotheses; columns are model predictions. A perfect diagonal is not assumed.</p>
+          </article>
+          <article class="panel calibration-panel">
+            <div class="panel-header"><div><span class="panel-kicker">PROBABILITY HONESTY</span><h3>Reliability profile</h3></div><span class="live-badge"><i></i> CALIBRATED</span></div>
+            <div class="reliability-legend"><span><i class="accuracy-key"></i>Observed accuracy</span><span><i class="confidence-key"></i>Mean confidence</span></div>
+            <div class="reliability-bars" id="reliabilityBars"></div>
+            <div class="model-provenance" id="modelProvenance"></div>
+          </article>
+        </div>
+
+        <div class="model-lower-grid">
+          <article class="panel class-panel">
+            <div class="panel-header"><div><span class="panel-kicker">CLASS RESOLUTION</span><h3>Per-intent performance</h3></div><span class="boundary-chip">BEHAVIOUR · NOT IDENTITY</span></div>
+            <div class="class-metrics" id="classMetrics"></div>
+            <div class="limitation-strip" id="modelLimitations"></div>
+          </article>
+          <article class="panel hardware-panel">
+            <div class="panel-header"><div><span class="panel-kicker gold-text">HARDWARE HORIZON</span><h3>Enforcement Profile</h3></div><span class="hardware-state" id="hardwareState">LOADING</span></div>
+            <p class="hardware-copy" id="hardwareProfile">Loading the proof-carrying enforcement contract.</p>
+            <div class="hardware-boundary"><span>HOST CONTROL PLANE</span><i>certificate</i><strong>ATTESTED GATEWAY</strong></div>
+            <div class="hardware-invariants" id="hardwareInvariants"></div>
+            <button class="secondary-button" id="hardwareDryRunButton">Simulate attested commit + rollback</button>
+            <div class="hardware-receipt"><small>SIMULATED HARDWARE RECEIPT</small><code id="hardwareReceipt">No dry run issued</code></div>
+          </article>
+        </div>
+
+        <article class="panel future-models-panel"><div class="panel-header"><div><span class="panel-kicker">DEEP-LEARNING EXPANSION</span><h3>Data-gated model roadmap</h3></div><span class="boundary-chip">NO MODEL THEATRE</span></div><div class="future-models" id="futureModels"></div></article>
+        <div class="research-principle observatory-warning"><span>VALIDITY BOUNDARY</span><strong>This release proves a reproducible multi-model pipeline on synthetic traces. It does not claim live-enterprise accuracy, human attribution, real packet enforcement or patent novelty.</strong></div>
+      </section>
+
+      <section class="workspace" id="workspace-telemetry" data-title="Telemetry Nexus" data-eyebrow="AEGIS / RESIDENT SIGNAL PLANE">
+        <div class="workspace-intro telemetry-intro">
+          <div><span class="panel-kicker">PASSIVE · LOCAL-FIRST · PRIVACY-BOUNDED</span><h2>The endpoint speaks in evidence, not surveillance.</h2><p>The resident runtime samples real host health and code integrity. On Windows it queries only selected security event IDs, discards unapproved fields, and pseudonymizes identity values before they reach storage.</p></div>
+          <div class="stacked-actions"><button class="outline-button" id="collectTelemetryButton">Collect telemetry now</button><span class="telemetry-runtime-badge" id="telemetryRuntimeBadge"><i></i> CONNECTING</span></div>
+        </div>
+
+        <section class="metrics model-metrics" aria-label="Resident telemetry metrics">
+          <article class="metric-card"><div class="metric-top"><span>OBSERVATIONS</span><i class="cyan"></i></div><strong id="telemetryCount">—</strong><small>Deduplicated local records</small></article>
+          <article class="metric-card"><div class="metric-top"><span>LAST SIGNAL</span><i class="cyan"></i></div><strong class="system-value" id="telemetryLastSeen">—</strong><small>Most recent stored observation</small></article>
+          <article class="metric-card"><div class="metric-top"><span>COLLECTION CADENCE</span><i class="violet"></i></div><strong><span id="telemetryInterval">—</span><em> sec</em></strong><small>Bounded resident sampling</small></article>
+          <article class="metric-card"><div class="metric-top"><span>OUTBOUND EGRESS</span><i class="gold"></i></div><strong class="text-metric" id="telemetryEgress">—</strong><small>No cloud transmission path</small></article>
+        </section>
+
+        <div class="telemetry-command-grid">
+          <article class="panel telemetry-collectors-panel">
+            <div class="panel-header"><div><span class="panel-kicker">LATEST COLLECTION CYCLE</span><h3>Collector execution plane</h3></div><span class="count-badge" id="telemetryRunId">NO RUN</span></div>
+            <div class="telemetry-collector-list" id="telemetryCollectorRuns"></div>
+          </article>
+          <article class="panel privacy-panel">
+            <div class="panel-header"><div><span class="panel-kicker gold-text">DATA MINIMIZATION</span><h3>Privacy envelope</h3></div><span class="boundary-chip safe">LOCAL BY DESIGN</span></div>
+            <div class="privacy-orbit"><div><span>HMAC</span><small>PER-INSTALL KEY</small></div><i></i></div>
+            <div class="privacy-contract" id="telemetryPrivacy"></div>
+            <div class="telemetry-storage"><small>RESIDENT STORE</small><strong id="telemetryStorage">—</strong></div>
+          </article>
+        </div>
+
+        <article class="panel telemetry-stream-panel">
+          <div class="panel-header"><div><span class="panel-kicker">NORMALIZED SIGNAL STREAM</span><h3>Recent endpoint observations</h3></div><span class="live-badge"><i></i> <b id="telemetryEventCount">0</b>&nbsp; STORED</span></div>
+          <div class="data-table telemetry-table"><div class="data-row data-head"><span>Time</span><span>Source</span><span>Signal</span><span>Severity</span><span>Privacy-safe detail</span></div><div id="telemetryRows"></div></div>
+        </article>
+        <div class="research-principle telemetry-boundary"><span>COLLECTION BOUNDARY</span><strong>Read-only local observation only. No packet interception, external scanning, exploitation, command-line capture, raw username storage, raw IP storage, or automated response.</strong></div>
+      </section>
+
+      <section class="workspace" id="workspace-gateway" data-title="Evidence Gateway" data-eyebrow="AEGIS / PRIVACY-BOUNDED SENSOR NORMALIZATION">
+        <div class="workspace-intro gateway-intro">
+          <div><span class="panel-kicker">SURICATA · ZEEK · OFFLINE AUTHORIZED IMPORT</span><h2>Bring evidence in without bringing surveillance with it.</h2><p>The gateway validates bounded sensor records, pseudonymizes endpoints and sensitive references in memory, discards packet/application content, and stores only normalized local observations. Imports never become investigation accusations automatically.</p></div>
+          <span class="boundary-chip safe">NO SENSOR CONTROL · NO OUTBOUND CONNECTION</span>
+        </div>
+
+        <section class="metrics gateway-metrics" aria-label="Evidence Gateway metrics">
+          <article class="metric-card"><div class="metric-top"><span>CONNECTORS</span><i class="cyan"></i></div><strong id="gatewayConnectorCount">—</strong><small>Strict offline schemas</small></article>
+          <article class="metric-card"><div class="metric-top"><span>COMMITTED IMPORTS</span><i class="violet"></i></div><strong id="gatewayImportCount">—</strong><small>Manifested normalization runs</small></article>
+          <article class="metric-card"><div class="metric-top"><span>INSERTED SIGNALS</span><i class="cyan"></i></div><strong id="gatewayInsertedCount">—</strong><small>Deduplicated observations</small></article>
+          <article class="metric-card"><div class="metric-top"><span>RAW IP PERSISTED</span><i class="gold"></i></div><strong class="text-metric refused" id="gatewayRawIp">ZERO</strong><small>Fail-closed invariant</small></article>
+        </section>
+
+        <div class="gateway-command-grid">
+          <article class="panel gateway-import-panel">
+            <div class="panel-header"><div><span class="panel-kicker">NORMALIZATION AIRLOCK</span><h3>Preview before persistence</h3></div><span class="gateway-mode" id="gatewayMode">OFFLINE ONLY</span></div>
+            <div class="gateway-controls">
+              <label><span>CONNECTOR CONTRACT</span><select id="gatewayConnector"><option value="suricata-eve-json">Suricata EVE JSON</option><option value="zeek-conn-json">Zeek conn.log JSON</option></select></label>
+              <button class="outline-button" id="gatewaySampleButton">Load safe sample</button>
+            </div>
+            <label class="gateway-dropzone" for="gatewayFileInput"><input type="file" id="gatewayFileInput" accept=".json,.jsonl,.log,application/json"><span class="gateway-drop-icon">↧</span><strong id="gatewayFileName">Choose a JSON/JSONL evidence file</strong><small>Browser reads locally · maximum 256 records · 1 MiB request boundary</small></label>
+            <div class="dual-actions gateway-actions"><button class="secondary-button" id="gatewayPreviewButton" disabled>Run privacy preview</button><button class="secondary-button commit" id="gatewayCommitButton" disabled>Commit accepted observations</button></div>
+            <div class="gateway-manifest"><small>LATEST SAFE MANIFEST</small><code id="gatewayManifest">No preview generated</code></div>
+          </article>
+          <article class="panel gateway-privacy-panel">
+            <div class="panel-header"><div><span class="panel-kicker gold-text">DATA LOSS BY DESIGN</span><h3>Normalization boundary</h3></div><span class="boundary-chip">MINIMIZE FIRST</span></div>
+            <div class="gateway-airlock"><div><span>RAW</span><small>MEMORY ONLY</small></div><i></i><div><span>HMAC</span><small>LOCAL KEY</small></div><i></i><div><span>SAFE</span><small>SQLITE</small></div></div>
+            <div class="privacy-contract" id="gatewayPrivacy"></div>
+            <p class="method-note">The source file remains under the analyst’s control. AEGIS receives only the selected browser payload over loopback and never writes the original record.</p>
+          </article>
+        </div>
+
+        <article class="panel gateway-connectors-panel"><div class="panel-header"><div><span class="panel-kicker">ADAPTER CONTRACTS</span><h3>Supported evidence formats</h3></div><span class="count-badge">READ-ONLY</span></div><div class="gateway-connectors" id="gatewayConnectorCards"></div></article>
+        <article class="panel gateway-preview-panel"><div class="panel-header"><div><span class="panel-kicker">SAFE OUTPUT INSPECTION</span><h3>Record disposition</h3></div><span class="live-badge"><i></i> <b id="gatewayAcceptedCount">0</b>&nbsp; ACCEPTED</span></div><div class="data-table gateway-table"><div class="data-row data-head"><span>#</span><span>Status</span><span>Normalized event</span><span>Severity</span><span>Privacy-safe references</span></div><div id="gatewayRows"><div class="gateway-empty">Load a safe sample or choose a local sensor file.</div></div></div></article>
+        <div class="research-principle gateway-boundary"><span>PROMOTION BOUNDARY</span><strong>Network evidence enters the telemetry spool only after explicit preview and commit. It does not create a case, label a model, identify a person, trigger a response, contact a sensor, or transmit data outward.</strong></div>
+      </section>
+
+      <section class="workspace" id="workspace-governance" data-title="Governance Ledger" data-eyebrow="AEGIS / ATTESTED MODEL LIFECYCLE">
+        <div class="workspace-intro governance-intro">
+          <div><span class="panel-kicker">DATASET LINEAGE · MODEL ATTESTATION · RELEASE EVIDENCE</span><h2>Learning becomes trustworthy only when every promotion leaves proof.</h2><p>AEGIS binds each built-in research dataset, model and safety policy to an immutable descriptor, local attestation and lineage graph. Promotion evaluations enter a hash-linked ledger; the loopback API cannot manufacture human approval, enterprise validation or shadow volume.</p></div>
+          <div class="stacked-actions"><button class="outline-button" id="governanceEvaluateButton">Evaluate selected candidate</button><button class="outline-button quiet" id="governanceVerifyButton">Verify registry + ledger</button></div>
+        </div>
+
+        <section class="metrics governance-metrics" aria-label="Governance metrics">
+          <article class="metric-card"><div class="metric-top"><span>ARTIFACTS</span><i class="cyan"></i></div><strong id="governanceArtifactCount">—</strong><small>Immutable local descriptors</small></article>
+          <article class="metric-card"><div class="metric-top"><span>VERIFIED</span><i class="cyan"></i></div><strong id="governanceVerifiedCount">—</strong><small>Digest + attestation valid</small></article>
+          <article class="metric-card"><div class="metric-top"><span>DECISIONS</span><i class="violet"></i></div><strong id="governanceDecisionCount">—</strong><small>Append-only lifecycle records</small></article>
+          <article class="metric-card"><div class="metric-top"><span>CHAIN STATE</span><i class="gold"></i></div><strong class="text-metric" id="governanceChainState">—</strong><small>Full ledger verification</small></article>
+        </section>
+
+        <div class="governance-command-grid">
+          <article class="panel governance-registry-panel">
+            <div class="panel-header"><div><span class="panel-kicker">ARTIFACT INVENTORY</span><h3>Dataset, model and policy lineage</h3></div><span class="live-badge"><i></i> <b id="governanceRegistryState">LOADING</b></span></div>
+            <div class="governance-filter"><label><span>PROMOTION CANDIDATE</span><select id="governanceCandidate"></select></label><code id="governanceKeyId">LOCAL KEY —</code></div>
+            <div class="governance-artifacts" id="governanceArtifactCards"></div>
+          </article>
+          <article class="panel governance-attestation-panel">
+            <div class="panel-header"><div><span class="panel-kicker gold-text">TRUST SCOPE</span><h3>What the seal actually means</h3></div><span class="boundary-chip">LOCAL HMAC</span></div>
+            <div class="attestation-seal"><div><span>H</span></div><i></i><section><small>METHOD</small><strong>HMAC-SHA256</strong><p>Integrity and authenticity inside this installation</p></section></div>
+            <div class="privacy-contract" id="governanceAttestation"></div>
+            <div class="governance-external-gap"><span>PRODUCTION GAP</span><strong>Organization signature + platform code signing + offline reviewer ceremony</strong></div>
+          </article>
+        </div>
+
+        <article class="panel governance-promotion-panel">
+          <div class="panel-header"><div><span class="panel-kicker">NON-BYPASSABLE RELEASE GATE</span><h3>Latest candidate decision</h3></div><span class="promotion-state hold-shadow" id="governanceDecision">HOLD SHADOW</span></div>
+          <div class="governance-promotion-meta"><div><small>CANDIDATE</small><code id="governanceCandidateId">—</code></div><div><small>DECISION ID</small><code id="governanceDecisionId">—</code></div><div><small>RECORD HASH</small><code id="governanceRecordHash">—</code></div></div>
+          <div class="governance-checks" id="governancePromotionChecks"></div>
+          <p class="method-note">An evaluation may prove that offline quality gates pass. It cannot promote a model. Production release remains a separate, signed transaction that is intentionally absent from this Research Edition.</p>
+        </article>
+
+        <article class="panel governance-ledger-panel">
+          <div class="panel-header"><div><span class="panel-kicker">HASH-LINKED DECISION HISTORY</span><h3>Promotion ledger</h3></div><span class="world-version" id="governanceChainHead">CHAIN —</span></div>
+          <div class="data-table governance-ledger-table"><div class="data-row data-head"><span>Seq</span><span>Time</span><span>Candidate</span><span>Decision</span><span>Previous hash</span><span>Record hash</span></div><div id="promotionLedgerRows"></div></div>
+        </article>
+        <div class="research-principle governance-boundary"><span>GOVERNANCE BOUNDARY</span><strong>Local HMAC is not a public-key signature, trusted timestamp or non-repudiation proof. No browser request can create reviewer sign-off, alter registered artifacts, rewrite the ledger, promote model weights or bypass the Safety Kernel.</strong></div>
+      </section>
+
+      <section class="workspace" id="workspace-access" data-title="Access &amp; Audit" data-eyebrow="AEGIS / LICENSED OPERATOR TRUST BOUNDARY">
+        <div class="workspace-intro access-intro">
+          <div><span class="panel-kicker">SIGNED ENTITLEMENTS · SCOPED OPERATORS · SEALED COMMAND RECEIPTS</span><h2>Trust is enforced at the command boundary.</h2><p>Every mutation must pass the local session check, server-assigned role scope, offline license entitlement and append-only audit preflight before AEGIS executes it. Licensing can reduce access; it can never weaken the Safety Kernel.</p></div>
+          <div class="stacked-actions"><button class="outline-button" id="auditVerifyButton">Verify command chain</button><button class="outline-button quiet" id="licenseReloadButton">Reload offline license</button></div>
+        </div>
+
+        <section class="metrics access-metrics" aria-label="Access and audit metrics">
+          <article class="metric-card"><div class="metric-top"><span>LICENSE STATE</span><i class="gold"></i></div><strong class="text-metric" id="accessLicenseState">—</strong><small id="accessLicenseEdition">Loading edition</small></article>
+          <article class="metric-card"><div class="metric-top"><span>OPERATOR ROLE</span><i class="cyan"></i></div><strong class="text-metric" id="accessRole">—</strong><small>Assigned by the local host</small></article>
+          <article class="metric-card"><div class="metric-top"><span>COMMANDS SEALED</span><i class="violet"></i></div><strong id="auditCommandCount">—</strong><small>Preflight + outcome receipts</small></article>
+          <article class="metric-card"><div class="metric-top"><span>AUDIT CHAIN</span><i class="cyan"></i></div><strong class="text-metric" id="auditChainState">—</strong><small>Full-chain verification</small></article>
+        </section>
+
+        <div class="access-command-grid">
+          <article class="panel license-panel">
+            <div class="panel-header"><div><span class="panel-kicker gold-text">OFFLINE COMMERCIAL ENTITLEMENT</span><h3>License envelope</h3></div><span class="license-badge" id="licenseBadge">CHECKING</span></div>
+            <div class="license-seal"><div class="license-rings"><i></i><i></i><span>Æ</span></div><section><small>EDITION</small><strong id="licenseEdition">—</strong><p id="licenseCustomer">Reading local entitlement</p></section></div>
+            <div class="license-contract" id="licenseContract"></div>
+            <div class="entitlement-zone"><small>ACTIVE ENTITLEMENTS</small><div class="entitlement-chips" id="licenseEntitlements"></div></div>
+            <div class="license-reason" id="licenseReason">No license decision loaded.</div>
+          </article>
+
+          <article class="panel operator-panel">
+            <div class="panel-header"><div><span class="panel-kicker">SERVER-ASSIGNED AUTHORITY</span><h3>Operator session</h3></div><span class="live-badge"><i></i> LOCAL SESSION</span></div>
+            <div class="operator-orbit"><div class="operator-core"><small>ROLE</small><strong id="operatorCoreRole">—</strong><span id="operatorScopeCount">— SCOPES</span></div><i class="operator-ring ring-a"></i><i class="operator-ring ring-b"></i></div>
+            <div class="operator-meta"><div><small>SESSION REFERENCE</small><code id="operatorSessionRef">—</code></div><div><small>AUTHENTICATION</small><strong id="operatorAuthentication">—</strong></div></div>
+            <div class="scope-ladder" id="operatorScopes"></div>
+            <p class="method-note">The browser cannot choose or elevate this role. Raw desktop tokens are compared in memory and never written to the audit journal.</p>
+          </article>
+        </div>
+
+        <article class="panel audit-ledger-panel">
+          <div class="panel-header"><div><span class="panel-kicker">TAMPER-EVIDENT OPERATOR HISTORY</span><h3>Command receipts</h3></div><span class="world-version" id="auditChainHead">CHAIN —</span></div>
+          <div class="audit-strip"><span><i></i> ACCEPTED is sealed before execution</span><span><i></i> COMPLETED or FAILED is sealed after execution</span><span><i></i> Request body stored as SHA-256 only</span></div>
+          <div class="data-table audit-table"><div class="data-row data-head"><span>Seq</span><span>Time</span><span>Command</span><span>Role</span><span>Route</span><span>Decision</span><span>Receipt</span></div><div id="auditRows"><div class="audit-empty">No operator commands have been issued in this installation.</div></div></div>
+        </article>
+
+        <div class="access-boundary-grid">
+          <article class="panel trust-claim-panel"><span>WHAT v1.2 ESTABLISHES</span><strong>Offline Ed25519 license verification, monotonic viewer/analyst/administrator scopes, fail-closed mutation preflight, append-only SQLite triggers and a per-install HMAC-SHA256 command chain.</strong></article>
+          <article class="panel trust-gap-panel"><span>WHAT IT DOES NOT CLAIM</span><strong>Local HMAC is not public non-repudiation, a trusted timestamp, enterprise SSO, Windows code signing, hardware-backed key custody or immutable external archival. Those remain explicit production gates.</strong></article>
+        </div>
+        <div class="research-principle access-boundary"><span>NON-BYPASSABLE SAFETY ORDER</span><strong>Session → role → entitlement → audit preflight → route → Safety Kernel. A paid license never authorizes external targeting, hack-back, person attribution, model auto-promotion or protected-namespace reachability.</strong></div>
+      </section>
+
+      <section class="workspace" id="workspace-system" data-title="System &amp; Agents" data-eyebrow="AEGIS / INSTALLED RUNTIME FOUNDATION">
+        <div class="workspace-intro system-intro"><div><span class="panel-kicker">SOFTWARE THAT LIVES WITH THE SYSTEM</span><h2>The console is the glass. The resident node is the product.</h2><p>AEGIS now has a Windows Service host, durable local telemetry spool, real resource and integrity sampling, and privacy-bounded Windows event collection. Privileged network enforcement remains disabled until a signed, independently reviewed adapter exists.</p></div><span class="node-online" id="nodeOnlineBadge"><i></i> CONNECTING</span></div>
+        <section class="metrics model-metrics" aria-label="Local node metrics"><article class="metric-card"><div class="metric-top"><span>NODE</span><i class="cyan"></i></div><strong class="system-value" id="nodeId">—</strong><small>Pseudonymous local identifier</small></article><article class="metric-card"><div class="metric-top"><span>RUNTIME</span><i class="cyan"></i></div><strong class="system-value" id="nodeUptime">—</strong><small>Current control-plane process</small></article><article class="metric-card"><div class="metric-top"><span>MEMORY FREE</span><i class="gold"></i></div><strong><span id="nodeMemory">—</span><em> GiB</em></strong><small>Observed on this host</small></article><article class="metric-card"><div class="metric-top"><span>ACTIVE COLLECTORS</span><i class="violet"></i></div><strong id="activeCollectors">—</strong><small>Honest active—not merely planned</small></article></section>
+        <div class="system-grid"><article class="panel"><div class="panel-header"><div><span class="panel-kicker">COLLECTOR REGISTRY</span><h3>Telemetry and enforcement adapters</h3></div><span class="live-badge"><i></i> LIVE HEARTBEAT</span></div><div class="collector-list" id="collectorList"></div></article><article class="panel node-profile-panel"><div class="panel-header"><div><span class="panel-kicker">HOST ENVELOPE</span><h3>Local runtime profile</h3></div><span class="count-badge" id="nodePlatform">—</span></div><div class="node-profile" id="nodeProfile"></div><div class="agent-boundary" id="agentBoundary">Reading runtime boundary…</div></article></div>
+        <article class="panel deployment-panel"><div class="panel-header"><div><span class="panel-kicker">LICENSED DEPLOYMENT SHAPES</span><h3>From endpoint service to hardware enforcement</h3></div><span class="boundary-chip">ONE CONTROL CONTRACT</span></div><div class="deployment-paths" id="deploymentPaths"></div></article>
+      </section>
+
+      <footer class="product-footer"><span>AEGIS v1.2.0 · Desktop research build</span><span>ENDPOINT NATIVE · LICENSED OPERATOR TRUST · NO AUTO-PROMOTION</span></footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

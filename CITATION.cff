@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: >-
+  AEGIS is currently private, unpublished research. Contact the author before
+  citing, redistributing, or describing implementation details.
+title: "AEGIS: Self-Learning Cyber Deception Network"
+type: software
+version: 1.2.0
+date-released: 2026-08-23
+authors:
+  - family-names: Murugan
+    given-names: K. Karan
+repository-code: "https://github.com/karankarthik1407-sys/AEGIS"
+abstract: >-
+  A local-first defensive cyber-deception, investigation, governed-learning,
+  and safety-enforcement research platform for authorized environments.
+keywords:
+  - cyber deception
+  - defensive security
+  - machine learning
+  - threat investigation
+  - safety governance

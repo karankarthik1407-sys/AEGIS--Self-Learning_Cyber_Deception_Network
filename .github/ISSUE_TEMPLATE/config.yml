@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report
+    url: https://github.com/karankarthik1407-sys/AEGIS/security/advisories/new
+    about: Report vulnerabilities privately; never place exploit details in a normal issue.
