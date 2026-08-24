@@ -1,0 +1,43 @@
+name: Product capability
+description: Propose a bounded, defensive AEGIS capability.
+title: "[Feature]: "
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the user or operational problem without assuming a solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed capability
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Authorization, safety and privacy boundary
+      description: Explain misuse risks, data minimization and non-goals.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Falsifiable acceptance criteria
+      description: List observable tests and failure conditions.
+    validations:
+      required: true
+  - type: dropdown
+    id: disclosure
+    attributes:
+      label: Initial disclosure classification
+      options:
+        - Internal
+        - Confidential
+        - Patent-sensitive
+        - Public (approval record required)
+    validations:
+      required: true

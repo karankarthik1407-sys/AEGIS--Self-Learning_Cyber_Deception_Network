@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegis-platform"
+version = "1.2.0"
+description = "AEGIS self-learning cyber deception control plane"
+requires-python = ">=3.10"
+authors = [{name = "K. Karan Murugan"}]
+license = {text = "Proprietary - all rights reserved"}
+dependencies = ["cryptography==46.0.0"]
+
+[project.scripts]
+aegis = "aegis.server:main"
+aegis-desktop = "aegis.desktop:main"
+aegis-windows-service = "aegis.windows_service:main"
+
+[project.optional-dependencies]
+desktop = ["pywebview==6.2.1"]
+build = ["pyinstaller==6.22.2"]
+
+[tool.setuptools]
+packages = ["aegis"]
+
+[tool.setuptools.data-files]
+"share/aegis/web" = ["web/index.html", "web/app.js", "web/styles.css"]
+
+[tool.unittest]
+start-directory = "tests"

@@ -1,0 +1,36 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:00"
+      timezone: Asia/Kolkata
+    open-pull-requests-limit: 5
+    rebase-strategy: auto
+    commit-message:
+      prefix: build
+      include: scope
+    groups:
+      python-runtime:
+        dependency-type: production
+      python-development:
+        dependency-type: development
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:15"
+      timezone: Asia/Kolkata
+    open-pull-requests-limit: 5
+    rebase-strategy: auto
+    commit-message:
+      prefix: build
+      include: scope
+    groups:
+      github-actions:
+        patterns:
+          - "*"

@@ -1,0 +1,61 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.venv/
+venv/
+
+# Coverage and test output
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+junit.xml
+
+# Packaging and generated releases
+*.egg-info/
+build/
+dist/
+release/
+*.whl
+*.tar.gz
+
+# Runtime state and generated evidence
+data/*
+!data/.gitkeep
+logs/
+exports/
+artifacts/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Secrets, signing material and issued licenses
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p8
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.aegis-license
+licenses/
+secrets/
+private/
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
