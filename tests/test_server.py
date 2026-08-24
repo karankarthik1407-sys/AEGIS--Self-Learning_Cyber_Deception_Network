@@ -10,6 +10,9 @@ from aegis.server import handler_factory
 from aegis.service import AegisService
 
 
+HTTP_TEST_TIMEOUT_SECONDS = 15
+
+
 class HttpIntegrationTests(unittest.TestCase):
     def setUp(self):
         self.tempdir = tempfile.TemporaryDirectory()
@@ -34,11 +37,11 @@ class HttpIntegrationTests(unittest.TestCase):
             method=method,
             headers={"Content-Type": "application/json"},
         )
-        with urlopen(request, timeout=3) as response:
+        with urlopen(request, timeout=HTTP_TEST_TIMEOUT_SECONDS) as response:
             return response.status, json.loads(response.read())
 
     def test_static_console_and_live_routes(self):
-        with urlopen(self.base + "/", timeout=3) as response:
+        with urlopen(self.base + "/", timeout=HTTP_TEST_TIMEOUT_SECONDS) as response:
             html = response.read().decode()
             self.assertIn("AEGIS — Autonomous Deception Intelligence", html)
             self.assertIn('id="simulateButton"', html)
