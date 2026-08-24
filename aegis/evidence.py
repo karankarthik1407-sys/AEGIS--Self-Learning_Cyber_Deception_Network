@@ -41,4 +41,3 @@ def verify_records(records: list[dict[str, Any]]) -> dict[str, Any]:
             }
         previous = record["event_hash"]
     return {"valid": True, "verified_events": len(records), "head_hash": previous}
-

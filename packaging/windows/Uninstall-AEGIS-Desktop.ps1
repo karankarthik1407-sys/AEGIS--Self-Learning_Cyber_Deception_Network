@@ -46,4 +46,3 @@ if ($RemoveTelemetryAndEvidence) {
 }
 
 Write-Host "AEGIS application files and Windows Service were removed."
-

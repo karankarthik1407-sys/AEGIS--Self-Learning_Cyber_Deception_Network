@@ -46,4 +46,3 @@ class SafetyGate:
         canonical = json.dumps(unsigned, sort_keys=True, separators=(",", ":")).encode()
         unsigned["digest"] = hashlib.sha256(canonical).hexdigest()
         return unsigned
-

@@ -2,8 +2,8 @@
 
 Working paper draft 0.1 · AEGIS Research Edition 1.0.0 · 20 August 2026
 
-**Author:** K. Karan Murugan  
-**Status:** internal pre-submission draft; not externally validated  
+**Author:** K. Karan Murugan
+**Status:** internal pre-submission draft; not externally validated
 **Disclosure control:** obtain patent/publication-sequence advice before public
 release of enabling implementation details.
 

@@ -128,4 +128,3 @@ def _sequence_similarity(left: tuple[str, ...], right: tuple[str, ...]) -> float
             else:
                 matrix[i][j] = max(matrix[i - 1][j], matrix[i][j - 1])
     return matrix[-1][-1] / max(len(left), len(right))
-

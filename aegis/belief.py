@@ -94,4 +94,3 @@ def summarize(beliefs: Mapping[str, float]) -> dict[str, object]:
             for name, probability in ordered
         ],
     }
-
