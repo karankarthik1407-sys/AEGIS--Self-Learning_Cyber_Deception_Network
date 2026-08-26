@@ -11,6 +11,9 @@
 - Added weekly grouped dependency maintenance for Python and GitHub Actions.
 - Added explicit governance and patent-sensitive disclosure controls. The
   repository remains private; this checkpoint does not authorize publication.
+- Enforced verified human commit identity and vendor-neutral repository
+  provenance; CI rejects automated-attribution branding in tracked files and
+  recent commit messages.
 
 ## 1.2.0 — Enterprise Control Boundary
 
