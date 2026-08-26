@@ -16,6 +16,14 @@ collaboration.
 5. Merge only after required checks pass and the change is reviewable from its
    recorded evidence.
 
+## Commit identity
+
+Commit authorship must use the contributing human's verified GitHub identity.
+Do not add automated-assistant co-author trailers, generated-by banners or bot
+branding to source files, commits, pull requests or issues. This repository rule
+does not replace any disclosure obligation imposed by a university, employer,
+publisher, funder, contract or patent professional.
+
 ## Local verification
 
 ```bash
