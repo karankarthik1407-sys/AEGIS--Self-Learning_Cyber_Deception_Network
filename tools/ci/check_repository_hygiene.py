@@ -51,8 +51,13 @@ SECRET_PATTERNS = {
     "GitHub token": re.compile(rb"(?:ghp|github_pat)_[A-Za-z0-9_]{20,}"),
     "AWS access-key identifier": re.compile(rb"AKIA[0-9A-Z]{16}"),
     "Google API key": re.compile(rb"AIza[0-9A-Za-z_-]{35}"),
-    "OpenAI-style secret": re.compile(rb"sk-[A-Za-z0-9_-]{32,}"),
+    "API credential": re.compile(rb"sk-[A-Za-z0-9_-]{32,}"),
 }
+ASSISTANT_BRAND_MARKERS = (
+    b"chat" + b"gpt",
+    b"co" + b"dex",
+    b"open" + b"ai",
+)
 
 
 def candidate_files() -> list[Path]:
@@ -102,11 +107,24 @@ def main() -> int:
             continue
 
         content = path.read_bytes()
+        lowered_content = content.lower()
         if content.startswith(b"SQLite format 3\x00"):
             failures.append(f"SQLite runtime database detected: {relative}")
+        if any(marker in lowered_content for marker in ASSISTANT_BRAND_MARKERS):
+            failures.append(f"automated-assistant attribution detected: {relative}")
         for label, pattern in SECRET_PATTERNS.items():
             if pattern.search(content):
                 failures.append(f"{label} detected: {relative}")
+
+    history = subprocess.run(
+        ["git", "-C", str(ROOT), "log", "-50", "--format=%B%x00"],
+        check=False,
+        capture_output=True,
+    )
+    if history.returncode == 0:
+        lowered_history = history.stdout.lower()
+        if any(marker in lowered_history for marker in ASSISTANT_BRAND_MARKERS):
+            failures.append("automated-assistant attribution detected in commit history")
 
     if failures:
         print("AEGIS repository hygiene FAILED")
