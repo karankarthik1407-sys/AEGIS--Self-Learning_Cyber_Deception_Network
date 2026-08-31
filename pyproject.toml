@@ -9,7 +9,7 @@ description = "AEGIS self-learning cyber deception control plane"
 requires-python = ">=3.10"
 authors = [{name = "K. Karan Murugan"}]
 license = {text = "Proprietary - all rights reserved"}
-dependencies = ["cryptography==46.0.0"]
+dependencies = ["cryptography==50.0.1"]
 
 [project.scripts]
 aegis = "aegis.server:main"
