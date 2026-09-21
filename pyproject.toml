@@ -18,7 +18,7 @@ aegis-windows-service = "aegis.windows_service:main"
 
 [project.optional-dependencies]
 desktop = ["pywebview==6.2.1"]
-build = ["pyinstaller==6.22.2"]
+build = ["pyinstaller==6.22.3"]
 
 [tool.setuptools]
 packages = ["aegis"]
